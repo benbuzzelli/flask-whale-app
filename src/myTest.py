@@ -1,12 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-import io
-import os
-import re
-import shutil
-import string
 import tensorflow as tf
+import os
 from tensorflow import keras
 from keras.models import load_model
 
@@ -35,7 +31,10 @@ def makePrediction(messages_as_string):
     text_ds = tf.data.Dataset.from_tensor_slices(messages).batch(32)
     vectorizer.adapt(text_ds)
     ##print(len(vectorizer.get_vocabulary()))
-    model = load_model('assets/models/model.h5')
+
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(THIS_FOLDER, "assets/models/model.h5")
+    model = load_model(path)
     print ("I loaded a model")
 
     string_input = keras.Input(shape=(1,), dtype="string")

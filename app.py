@@ -1,20 +1,8 @@
 from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
-import pyrebase
 import io
 import os
 import myTest
-
-config = {
-    "apiKey": "AIzaSyCNREzzNW83QsUIgG6QzX-ozpOINWL955c",
-    "authDomain": "security-whale.firebaseapp.com",
-    "databaseURL": "https://security-whale.firebaseio.com",
-    "projectId": "security-whale",
-    "storageBucket": "security-whale.appspot.com",
-    "messagingSenderId": "774091153639",
-    "appId": "1:774091153639:web:a54a1397c23f22242e0242",
-    "measurementId": "G-6VD698LMTY"
-}
 
 firebase = pyrebase.initialize_app(config)
 

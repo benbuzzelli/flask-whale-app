@@ -13,7 +13,7 @@ from tensorflow.keras.layers.experimental.preprocessing import TextVectorization
 from tensorflow.keras import layers
 
 def makePrediction(messages_as_string):
-    print ("Running prediction function: \n")
+    print ("Running prediction function: \n" + messages_as_string)
     # print (type(messages_as_string))
     # print ("\n")
     st = "this is somewhat a messageabc123message2abc123message3"
@@ -71,7 +71,8 @@ def makePrediction(messages_as_string):
     print("Average non vuln length", 0 if nonVulnLengthSum is 0 else nonVulnLengthSum/nonVuln)
     vuln = str(Vuln)
     avg_vuln = '0' if vulnLengthSum is 0 else str(vulnLengthSum/Vuln)
+    isVuln = 'true' if Vuln > nonVuln else 'false'
     non_vuln = str(nonVuln)
     avg_non_vuln = '0' if nonVulnLengthSum is 0 else str(nonVulnLengthSum/nonVuln)
-    return_string = "Vuln commits: " + vuln + "\n" + "Average vuln length: " + avg_vuln + "\n" + "non vuln commits: " + non_vuln + "\n" + "Average non vuln length: " + avg_non_vuln + "\n"
+    return_string = vuln + "," + non_vuln + "," + isVuln
     return return_string

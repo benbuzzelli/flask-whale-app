@@ -14,7 +14,7 @@ from tensorflow.keras import layers
 
 def switch (modelSelection):
     switcher = {
-        '1/50': './assets/models/model_vul1_nonvul50.h5'
+        '1/50': './assets/models/conv_vul1_nonvul50.h5'
     }
     return switcher.get(modelSelection,'invalidModel')
 

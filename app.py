@@ -28,6 +28,7 @@ def index():
         data_as_string = str(data, "utf-8")
 
         data_as_string = list(data_as_string.split('x23model!t@ype!x56'))
+        print ("model: " + data_as_string[1])
         if not data:
             return jsonify({"error":"no file"})
         return predictFinal.makePrediction(data_as_string[0], data_as_string[1]), 201

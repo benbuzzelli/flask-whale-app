@@ -3,7 +3,7 @@ from flask_cors import CORS
 import pyrebase
 import io
 import os
-import predictFinal.py
+import predictFinal
 
 config = {
     "apiKey": "AIzaSyCNREzzNW83QsUIgG6QzX-ozpOINWL955c",
@@ -26,9 +26,11 @@ def index():
     if (request.method == 'POST'):
         data = request.data
         data_as_string = str(data, "utf-8")
+
+        data_as_string = list(data_as_string.split('x23model!t@ype!x56'))
         if not data:
             return jsonify({"error":"no file"})
-        return predict.makePrediction(data_as_string), 201
+        return predictFinal.makePrediction(data_as_string[0], data_as_string[1]), 201
     else:
         return jsonify({"about":"Nothing to see here..."})
 

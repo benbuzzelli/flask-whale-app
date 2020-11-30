@@ -191,4 +191,4 @@ def testModels():
     print(str(modelVulnConsensus) + " Percent Vulnerable")
     print(str(modelNonVulnConsensus) + " Percent Non-Vulnerable")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-testModels()
+# testModels()

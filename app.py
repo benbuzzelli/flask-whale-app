@@ -3,7 +3,7 @@ from flask_cors import CORS
 import pyrebase
 import io
 import os
-import predict
+import predictFinal.py
 
 config = {
     "apiKey": "AIzaSyCNREzzNW83QsUIgG6QzX-ozpOINWL955c",

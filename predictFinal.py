@@ -21,6 +21,8 @@ def switch (modelSelection):
         '30/1': './assets/models/conv_vul30_nonvul1.h5',
         '1/100': './assets/models/conv_vul1_nonvul100.h5',
         '100/1': './assets/models/conv_vul100_nonvul1.h5',
+        'lstm30/1':'./assets/models/lstm_vul30_nonvul1.h5'
+        'lstm1/1':'./assets/models/lstm_vul1_nonvul1.h5'
         'original' : './assets/models/original.h5'
     }
     return switcher.get(modelSelection,'invalidModel')

@@ -113,7 +113,8 @@ def testModels():
     # Use the text vectorization layer to normalize, split, and map strings to
     # integers. Note that the layer uses the custom standardization defined above.
     # Set maximum_sequence length as all samples are not of the same length.
-    models = {'1/1','1/50','50/1','1/30','30/1','1/100','100/1','lstm1/1','lstm30/1','original'}
+    #models = {'1/1','1/50','50/1','1/30','30/1','1/100','100/1','lstm1/1','lstm30/1','original'}
+    models = {'lstm1/1','lstm30/1'}
     modelVulnConsensus = 0
     modelNonVulnConsensus = 0
 
@@ -174,10 +175,16 @@ def testModels():
                 nonVuln = nonVuln + 1
         print("Length test:")
         print("Vuln commits (over 50% likely to be vulnerable): ", Vuln)
-        print("Average vuln length",  vulnLengthSum/Vuln)
+        if Vuln == 0:
+            print("Average Vuln length 0")
+        else :
+            print("Average Vuln length", vulnLengthSum/Vuln)
         print("non vuln commits(under 50% likely to be vulnerable): ", nonVuln)
-        print("Average non vuln length", nonVulnLengthSum/nonVuln)
-        vulnLikelyHoodStr = '0' if count == 0 else str(vulnProbabilitySum/count)
+        if nonVuln == 0:
+            print("Average non vuln length 0")
+        else :
+            print("Average non vuln length", nonVulnLengthSum/nonVuln)
+        vulnLikelyHoodStr = '0' if count == 0  else str(vulnProbabilitySum/count)
         nonVulnLikelyHoodStr = '0' if count == 0 else str(nonVulnProbabilitySum/count)
         ## confidence should equal approximately 1
         confindence = '0' if count == 0 else str(vulnProbabilitySum/count + nonVulnProbabilitySum/count)
@@ -193,4 +200,4 @@ def testModels():
     print(str(modelVulnConsensus) + " Percent Vulnerable")
     print(str(modelNonVulnConsensus) + " Percent Non-Vulnerable")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-#testModels()
+testModels()

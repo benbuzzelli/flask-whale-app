@@ -199,4 +199,6 @@ def testModels():
     print(str(modelVulnConsensus) + " Percent Vulnerable")
     print(str(modelNonVulnConsensus) + " Percent Non-Vulnerable")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Estimated real occurance rate of vulnerable vs non-vulnerable:")
+    print("0.651537335 VULNERABLE, 0.348462665 NON-VULNERABLE")
 #testModels()

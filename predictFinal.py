@@ -113,7 +113,7 @@ def testModels():
     # Use the text vectorization layer to normalize, split, and map strings to
     # integers. Note that the layer uses the custom standardization defined above.
     # Set maximum_sequence length as all samples are not of the same length.
-    models = {'1/1','1/50','50/1','1/30','30/1','1/100','100/1','original'}
+    models = {'1/1','1/50','50/1','1/30','30/1','1/100','100/1','lstm1/1','lstm30/1','original'}
     modelVulnConsensus = 0
     modelNonVulnConsensus = 0
 
@@ -193,4 +193,4 @@ def testModels():
     print(str(modelVulnConsensus) + " Percent Vulnerable")
     print(str(modelNonVulnConsensus) + " Percent Non-Vulnerable")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-# testModels()
+#testModels()
